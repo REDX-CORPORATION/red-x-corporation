@@ -176,7 +176,19 @@
       position: relative;
       overflow: hidden;
       z-index: 1;
+        color: #ffff; /* add this line */
+
+  position: relative; /* needed for the ::before pseudo-element */
+  text-decoration: none; /* optional */
     }
+body.light-theme .cta-button {
+  color: #FF6666
+; /* black in light mode */
+}
+
+body.dark-theme .cta-button {
+  color: #ffffff; /* white in dark mode */
+}
 
     .cta-button::before {
       content: '';
@@ -387,26 +399,34 @@
     }
 
     .team-card {
-      background: linear-gradient(145deg, #151515, #0f0f0f);
-      border: 1px solid rgba(51, 51, 51, 0.5);
-      border-radius: var(--card-radius);
-      padding: 35px 25px;
-      text-align: center;
-      transition: var(--transition);
-      position: relative;
-      box-shadow: var(--shadow);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      overflow: hidden;
-      backdrop-filter: blur(5px);
-    }
+  background: rgba(255, 255, 255, 0.05); /* Transparent white */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--card-radius);
+  padding: 35px 25px;
+  text-align: center;
+  transition: var(--transition);
+  position: relative;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
 
-    body.light-theme .team-card {
-      background: #ffffff;
-      border: 1px solid rgba(0, 0, 0, 0.1);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    }
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px); /* Safari support */
+}
+
+   body.light-theme .team-card {
+  background: rgba(255, 255, 255, 0.6); /* Frosted glass */
+  border: 1px solid var(--primary); /* Use your theme's red or accent */
+  box-shadow: 0 8px 32px rgba(229, 9, 20, 0.2); /* Soft glow in red */
+  color: #212529;
+
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+
 
     .team-card::before {
       content: '';
@@ -524,24 +544,34 @@
       backdrop-filter: blur(5px);
     }
 
-    body.light-theme .product-card {
-      background: #ffffff;
-      border: 1px solid rgba(0, 0, 0, 0.1);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    }
+  body.light-theme .product-card {
+  background: rgba(255, 255, 255, 0.6); /* Frosted glass */
+  border: 1px solid var(--primary); /* Red-X accent */
+  box-shadow: 0 8px 32px rgba(229, 9, 20, 0.2); /* Soft red glow */
+  color: #212529;
 
-    .product-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 5px;
-      background: var(--primary);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.5s ease;
-    }
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+
+    .product-card {
+  background: rgba(255, 255, 255, 0.07); /* Transparent glass effect */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--card-radius);
+  padding: 35px 25px;
+  text-align: center;
+  transition: var(--transition);
+  position: relative;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  z-index: 1;
+}
 
     .product-card:hover::before {
       transform: scaleX(1);
@@ -633,24 +663,29 @@
     }
 
     .contact-card {
-      background: var(--dark-light);
-      border-radius: var(--card-radius);
-      padding: 40px 30px;
-      text-align: center;
-      transition: var(--transition);
-      border: 1px solid rgba(51, 51, 51, 0.5);
-      box-shadow: var(--shadow);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      backdrop-filter: blur(5px);
-    }
+  background: rgba(255, 255, 255, 0.07); /* Glass transparent effect */
+  border-radius: var(--card-radius);
+  padding: 40px 30px;
+  text-align: center;
+  transition: var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    body.light-theme .contact-card {
-      background: #ffffff;
-      border: 1px solid rgba(0, 0, 0, 0.1);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    }
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  z-index: 1;
+}
+
+   body.light-theme .contact-card {
+  background: rgba(255, 255, 255, 0.6); /* Light frosted glass */
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  color: #212529;
+}
+
 
     .contact-card:hover {
       transform: translateY(-8px);
@@ -677,9 +712,10 @@
       color: white;
     }
 
-    body.light-theme .contact-card h3 {
-      color: #212529;
-    }
+   body.light-theme .contact-card h3,
+body.light-theme .contact-card p {
+  color: #212529;
+}
 
     .contact-card a {
       display: inline-block;
@@ -693,10 +729,14 @@
       border: 1px solid rgba(0, 217, 255, 0.3);
       font-size: 1.1rem;
     }
+body.light-theme .contact-card a {
+  color: #212529; /* Normal state text in light mode */
+}
 
-    body.light-theme .contact-card a {
-      background: rgba(0, 217, 255, 0.08);
-    }
+body.light-theme .contact-card a:hover {
+  color: #ffffff; /* Hover state - white works now because of darker hover bg */
+}
+
 
     .contact-card a:hover {
       color: white;
@@ -1539,7 +1579,7 @@
   <nav>
     <div class="nav-container">
       <a href="#" class="nav-logo">
-        <span class="logo-mini">🔴</span>
+        <span class="logo-mini"></span>
         RED<span>-X</span>
       </a>
       <div class="nav-links">
@@ -1555,7 +1595,7 @@
 
   <header>
     <div class="logo">
-      <div class="logo-icon">🔴</div>
+      <div class="logo-icon"></div>
       <h1>RED-X CORPORATION</h1>
     </div>
     <p>Premium gaming panels, secure tools, exclusive deals, and giveaways for elite gamers</p>
@@ -1713,7 +1753,7 @@
   <footer>
     <div class="footer-content">
       <div class="footer-logo">
-        <div class="logo-icon">🔴</div>
+        <div class="logo-icon"></div>
         <h3>RED-X CORPORATION</h3>
         <p>Premium gaming solutions for competitive players worldwide</p>
       </div>
