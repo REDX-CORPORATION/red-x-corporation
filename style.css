@@ -627,6 +627,7 @@ body.light-theme .view-details {
 }
 
 /* Back Button */
+/* Back Button */
 .back-button {
     display: inline-flex;
     align-items: center;
@@ -636,16 +637,17 @@ body.light-theme .view-details {
     padding: 10px 20px;
     border-radius: 30px;
     font-size: 1rem;
-    transition: var(--transition);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
     gap: 8px;
     margin-bottom: 20px;
-    box-shadow: none;
+    position: relative; /* prevent shift */
 }
 
 .back-button:hover {
     background: rgba(229, 9, 20, 0.2);
-    box-shadow: 0 0 10px rgba(229, 9, 20, 0.3);
+    box-shadow: 0 0 0 4px rgba(229, 9, 20, 0.1); /* visual feedback */
 }
+
 
 /* Coming Soon Banner */
 .coming-soon-banner {
