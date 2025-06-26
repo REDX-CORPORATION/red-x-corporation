@@ -639,11 +639,12 @@ body.light-theme .view-details {
     transition: var(--transition);
     gap: 8px;
     margin-bottom: 20px;
+    box-shadow: none;
 }
 
 .back-button:hover {
     background: rgba(229, 9, 20, 0.2);
-    transform: translateX(-5px);
+    box-shadow: 0 0 10px rgba(229, 9, 20, 0.3);
 }
 
 /* Coming Soon Banner */
