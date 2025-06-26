@@ -644,30 +644,29 @@ body.light-theme .view-details {
     z-index: 10;
 }
 
+/* 🔒 REDX-BACK-BUTTON-FIX */
 .back-button {
-    display: inline-flex;
-    align-items: center;
+    display: inline-block;
     background: rgba(229, 9, 20, 0.1);
     color: var(--primary);
     text-decoration: none;
     padding: 10px 20px;
     border-radius: 30px;
     font-size: 1rem;
-    gap: 8px;
     margin-bottom: 20px;
-
-    /* Keep your smooth transition, but don't transform position */
-    transition: background-color 0.3s ease, color 0.3s ease;
-    user-select: none;
     cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.back-button i {
+    margin-right: 8px;
 }
 
 .back-button:hover {
     background: rgba(229, 9, 20, 0.2);
-    color: var(--primary);
     filter: brightness(1.1);
-    /* IMPORTANT: remove any transform like translateX here to prevent the button "moving" on hover */
 }
+
 
 
 
