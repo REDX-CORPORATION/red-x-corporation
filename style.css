@@ -323,6 +323,24 @@ body.light-theme .theme-toggle {
     background: var(--primary);
     transform: rotate(30deg);
 }
+.redx-fadein-8723 h2,
+.redx-fadein-8723 p {
+  opacity: 0;
+  transform: translateY(15px);
+  animation-name: redxFadeInUp;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  animation-delay: 0.3s;
+  animation-play-state: running;
+}
+
+@keyframes redxFadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 /* Sections */
 section {
