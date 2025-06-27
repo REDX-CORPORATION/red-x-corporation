@@ -45,9 +45,22 @@ body.light-theme {
     height: 100%;
     top: 0;
     left: 0;
-    z-index: -1;
+    
+}
+/* ===== FIX FOR PARTICLES.JS MOUSE EVENTS ===== */
+/* Make all direct children of body (except particles container) ignore mouse events */
+body > *:not(#particles-js) {
+    position: relative;
+    pointer-events: none;
 }
 
+/* Re-enable pointer events for interactive elements */
+nav, .card, section, footer, 
+button, a, input, .cta-button,
+.profile-button, .view-details,
+.back-to-top, .theme-toggle {
+    pointer-events: auto;
+}
 /* FIX: Digital pulse overlay blocking clicks */
 .digital-pulse::after {
     pointer-events: none;
