@@ -52,24 +52,6 @@ body.light-theme {
 .digital-pulse::after {
     pointer-events: none;
 }
-/* Fade-in and slide-up base class */
-.fade-in-up {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
-}
-
-/* When active (JS adds this) */
-.fade-in-up.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Optional delay for a smooth staggered effect */
-.fade-delay-1 { transition-delay: 0.2s; }
-.fade-delay-2 { transition-delay: 0.4s; }
-.fade-delay-3 { transition-delay: 0.6s; }
-.fade-delay-4 { transition-delay: 0.8s; }
 
 /* Header & Navigation */
 header {
@@ -340,24 +322,6 @@ body.light-theme .theme-toggle {
 .theme-toggle:hover {
     background: var(--primary);
     transform: rotate(30deg);
-}
-.redx-fadein-8723 h2,
-.redx-fadein-8723 p {
-  opacity: 0;
-  transform: translateY(15px);
-  animation-name: redxFadeInUp;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease;
-  animation-delay: 0.3s;
-  animation-play-state: running;
-}
-
-@keyframes redxFadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* Sections */
@@ -653,94 +617,7 @@ body.light-theme .view-details {
     opacity: 0.7;
     font-style: italic;
 }
-/* Detail Pages Container */
-.detail-container {
-    padding: var(--section-padding);
-    max-width: 1200px;
-    margin: auto;
-    position: relative;
-    z-index: 10;
-}
 
-/* 🔒 REDX-BACK-BUTTON-FIX */
-.back-button {
-    display: inline-block;
-    background: rgba(229, 9, 20, 0.1);
-    color: var(--primary);
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 30px;
-    font-size: 1rem;
-    margin-bottom: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.back-button i {
-    margin-right: 8px;
-}
-
-.back-button:hover {
-    background: rgba(229, 9, 20, 0.2);
-    filter: brightness(1.1);
-}
-
-
-
-
-/* Coming Soon Banner */
-.coming-soon-banner {
-    text-align: center;
-    padding: 30px;
-    background: rgba(229, 9, 20, 0.1);
-    border-radius: var(--card-radius);
-    margin-top: 30px;
-}
-
-.coming-soon-banner i {
-    font-size: 3rem;
-    color: var(--primary);
-    margin-bottom: 15px;
-}
-
-.coming-soon-banner h3 {
-    margin-bottom: 15px;
-}
-
-.notify-form {
-    display: flex;
-    max-width: 400px;
-    margin: 20px auto 0;
-}
-
-.notify-form input {
-    flex-grow: 1;
-    padding: 12px 15px;
-    border: 1px solid rgba(229, 9, 20, 0.3);
-    border-radius: 30px 0 0 30px;
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--light);
-    outline: none;
-}
-
-body.light-theme .notify-form input {
-    background: rgba(255, 255, 255, 0.8);
-    color: var(--dark);
-}
-
-.notify-form button {
-    background: var(--primary);
-    color: white;
-    border: none;
-    padding: 0 25px;
-    border-radius: 0 30px 30px 0;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.notify-form button:hover {
-    background: var(--primary-dark);
-}
 /* Contact Section */
 .contact-links {
     display: grid;
