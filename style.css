@@ -897,6 +897,7 @@ body.light-theme .team-member-header h2 {
     display: flex;
     align-items: center;
     gap: 8px;
+    text-decoration: none; /* ✅ REMOVE UNDERLINE */
 }
 
 .back-button:hover {
