@@ -180,3 +180,13 @@ window.addEventListener('scroll', () => {
     const scrollPercentage = (window.scrollY / scrollTotal) * 100;
     scrollProgress.style.width = scrollPercentage + '%';
 });
+
+// Smooth fade-in on load
+window.addEventListener('load', () => {
+    const elements = document.querySelectorAll('.fade-in-up');
+    elements.forEach((el, index) => {
+        setTimeout(() => {
+            el.classList.add('visible');
+        }, index * 200); // Staggered effect
+    });
+});
